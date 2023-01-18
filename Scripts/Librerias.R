@@ -15,7 +15,7 @@ for (package in packages) {
 }
 
 #Paquetes necesarios
-packages <- c("dplyr", "ggplot2", "lubridate", "tidyr", "kableExtra", "flextable", "filesstrings",
+packages <- c("dplyr", "ggplot2", "lubridate", "tidyr", "kableExtra", "flextable", "filesstrings", "reticulate",
               "purrr", "readr", "extrafont", "stringr", "ggmap", "readxl", "leaflet", "mapview", "purrr")
 
 install_and_load_packages(packages)

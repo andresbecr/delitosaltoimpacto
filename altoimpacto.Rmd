@@ -9,13 +9,31 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r Librerías/Paquetes, include = FALSE}
+source("Scripts/Librerias.R", encoding = "UTF-8")
+windowsFonts("Arial" = windowsFont("Calibri"))
+```
+
+```{python}
+import pandas as pd
+delitos = pd.read_csv("codigo/delitosaltoimpacto_2017.csv")
+
+```
+
+```{r}
+delitos = py$delitos
+```
+
+```{delitos.head()}
+```
+
 ## R Markdown
 
 ```{python}
 print("Esto es python")
 ```
 
-### Esto es un titulo nivel 3 
+### Esto es un titulo nivel 3
 
 #### Titulo 4
 
