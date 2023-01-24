@@ -2,39 +2,45 @@
 title: "Delitos de Alto Impacto en Bogota"
 author: "Andrés Felipe Bedoya Cruz"
 date: "2023-01-12"
-output: html_document
+output:
+  word_document: 
+      reference_docx: altoimpacto_reference.docx
+  html_document: default
 ---
+
+```{r opciones de cada chunk de código, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, dpi=300)
+```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r Librerías/Paquetes, include = FALSE}
+```{r Libs, include = FALSE}
 source("Scripts/Librerias.R", encoding = "UTF-8")
 windowsFonts("Arial" = windowsFont("Calibri"))
 ```
 
-```{python}
-import pandas as pd
-delitos = pd.read_csv("codigo/delitosaltoimpacto_2017.csv")
-
+```{r con_azure, include = FALSE}
+source("Scripts/Conexion_AzureSQL.R", encoding="UTF-8")
 ```
 
-```{r}
-delitos = py$delitos
+```{r graficos, include = FALSE}
+source("Scripts/plots.R", encoding="UTF-8")
 ```
 
-```{delitos.head()}
+## Tamaño de la base
+
+```{r intances, include=FALSE}
+cat(sprintf("La base tiene %s instancias", format(nrow(df_2022), big.mark=",")))
 ```
 
-## R Markdown
+**La base tiene `r format(nrow(df_2022), big.mark=",")` instancias**
 
-```{python}
-print("Esto es python")
+### Días con mas hechos delictivos
+
+```{r delitos_dia, echo=FALSE, fig.width=7, fig.height=3, fig.align="center"}
+hechos_dias
 ```
 
-### Esto es un titulo nivel 3
-
-#### Titulo 4
-
-Cambios
+En rojo se marca el día con más hechos delictivos para el año 2022.
