@@ -10,7 +10,8 @@ df <- df_2022
 
 df_count <- df %>% 
   group_by(nombre_dia) %>% 
-  summarize(cuenta = n())
+  summarize(cuenta = n(),
+            total_delitos=sum(numero_hechos))
 
 hechos_dias = ggplot(data=df_count, mapping=aes(x=nombre_dia, y= cuenta, fill=nombre_dia)) + 
   geom_bar(stat="identity") + 

@@ -21,6 +21,10 @@ source("Scripts/Librerias.R", encoding = "UTF-8")
 windowsFonts("Arial" = windowsFont("Calibri"))
 ```
 
+```{r}
+rm(list=ls())
+```
+
 ```{r con_azure, include = FALSE}
 source("Scripts/Conexion_AzureSQL.R", encoding="UTF-8")
 ```
@@ -44,3 +48,17 @@ hechos_dias
 ```
 
 En rojo se marca el día con más hechos delictivos para el año 2022.
+
+```{python}
+print("hola")
+```
+
+```{python}
+from codigo import database_connection as db
+from codigo.database_connection import column_names
+```
+
+```{python}
+
+column_names("Delitos")
+```
